@@ -16,6 +16,7 @@ namespace PixelWarGL
 
         }
 
+
         public static void Set(this Color[] c, int w, int x, int y, Color val)
         {
             var i = y * w + x;
