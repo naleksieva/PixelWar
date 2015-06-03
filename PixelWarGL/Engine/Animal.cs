@@ -150,7 +150,8 @@ namespace PixelWarGL
                     this.Game.Projectiles.Add(p);
 
                     // fire the ProjectileShot event
-                    ProjectileShot?.Invoke(this);
+                    if (ProjectileShot != null)
+                    ProjectileShot.Invoke(this);
 
                     // prevent shooting again
                     this.CanShoot = false;
@@ -237,7 +238,9 @@ namespace PixelWarGL
                 IsDead = true;
                 Life = 0;
                 Texture = PixelGameGl.TexDeadTank;
-                OnDeath?.Invoke(this);
+
+                if (OnDeath != null)
+                OnDeath.Invoke(this);
                 
             }
         }

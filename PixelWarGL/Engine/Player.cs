@@ -70,7 +70,9 @@ namespace PixelWarGL
 
         private void Animal_OnDeath(Animal obj)
         {
-            OnDeath?.Invoke(this);
+            if (OnDeath != null)
+
+            OnDeath.Invoke(this);
         }
 
         public void Activate ()
