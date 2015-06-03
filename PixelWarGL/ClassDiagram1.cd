@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PixelWarGL.Animal">
+    <Position X="11" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ISQABAAABgFABghAESCAAAAIBgAAAAAAAAAAAJABIEA=</HashCode>
+      <FileName>Engine\Animal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PixelWarGL.GameObject">
+    <Position X="8.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAEBAAAgwBgAEAAAEAAABgQAAUAIAIACAAMAAA=</HashCode>
+      <FileName>Engine\GameObject.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Position" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PixelWarGL.PixelGame">
+    <Position X="10" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAIAAgAAAAAQCAEACAAhYEEAGGEBBIAEAAA=</HashCode>
+      <FileName>Engine\PixelGame.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Terrain" />
+      <Field Name="Players" />
+      <Field Name="Projectiles" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="PixelWarGL.Player">
+    <Position X="13" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAABAAgBAEEAAAAAAAAgAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Player.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Animal" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PixelWarGL.Projectile">
+    <Position X="6.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAAAAAgAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Projectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PixelWarGL.Ext" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABABAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PixelWarGL.PixelGameGl" Collapsed="true">
+    <Position X="10" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAkECAQAAAAxAAAAAAAAAAgAAAAAgAAAAAAAggABQ=</HashCode>
+      <FileName>PixelGameGl.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="TheGame" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PixelWarGL.GameMap" Collapsed="true">
+    <Position X="2" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>GameMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PixelWarGL.Program">
+    <Position X="7.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="game" />
+    </ShowAsAssociation>
+  </Class>
+  <Struct Name="PixelWarGL.Point" Collapsed="true">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAACE4AcBAAAAAAAAAIAAAAAAAAAAYiA=</HashCode>
+      <FileName>Engine\Point.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="PixelWarGL.Vector" Collapsed="true">
+    <Position X="5.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAIgAAACAAiEcAUAAABAAQCAAAAACEDhAEAAYiI=</HashCode>
+      <FileName>Engine\Vector.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="PixelWarGL.TerrainType">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Engine\TerrainType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
