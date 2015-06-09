@@ -110,20 +110,7 @@ namespace PixelWarGL
             // TODO: Unload any non ContentManager content here
         }
 
-        //hack!
-        const int t_period = 2000;
-
-        const int min_circles = 1;
-        const int max_circles = 10;
-
-        const int sq_start_size = 10;
-        const int sq_incr_size = 2;
-        const int circle_offset = 6;
-        //const double nqkvo_ratio = 0.2;
-
-        int n_circles = 0;
-
-        //endhack
+        
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -132,18 +119,11 @@ namespace PixelWarGL
         protected override void Update(GameTime gameTime)
         {
             var msElapsed = (int)gameTime.ElapsedGameTime.TotalMilliseconds;
-            //hack!
+
+            BazookaTimer.CircleCount((int)gameTime.TotalGameTime.TotalMilliseconds);
+
+           
             
-
-            var t_elapsed = (int)gameTime.TotalGameTime.TotalMilliseconds;
-
-            t_elapsed %= (t_period * 2);
-            var t_actual = Math.Abs(t_elapsed - t_period);
-
-            n_circles = (int)Math.Round((double)(max_circles - min_circles) * t_actual / t_period + min_circles);
-
-            //end hack
-
             var kbd = Keyboard.GetState();
 
             if (kbd.IsKeyDown(Keys.RightAlt) && kbd.IsKeyDown(Keys.Enter))
@@ -177,27 +157,6 @@ namespace PixelWarGL
             //start drawing
             spriteBatch.Begin();
 
-            //hack!!
-
-
-            var pts = new Point[n_circles];
-            pts[0] = new Point(100, 100);
-            for (int i = 1; i < n_circles; i++)
-            {
-                var oldP = pts[i - 1];
-                var sz = sq_start_size + i * sq_incr_size;
-                pts[i] = new Point(oldP.X + circle_offset, oldP.Y - sq_incr_size / 2);
-            }
-
-            for(int i = n_circles - 1; i >= 0; i--)
-            {
-                var p = pts[i];
-                var sz = sq_start_size + i * sq_incr_size;
-                var c = Color.Lerp(Color.Yellow, Color.Brown, (float)i / max_circles);
-                spriteBatch.Draw(TexCircle, new Rectangle(p.X, p.Y, sz, sz), c);
-            }
-            
-            //end hack
 
             TheGame.Draw(spriteBatch);
 

@@ -40,6 +40,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BazookaTimer.cs" />
     <Compile Include="Engine\Animal.cs" />
     <Compile Include="Engine\GameState.cs" />
     <Compile Include="Engine\PixelGame.cs" />

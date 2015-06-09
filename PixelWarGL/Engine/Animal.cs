@@ -269,6 +269,9 @@ namespace PixelWarGL
                 crossD.X *= Direction;
 
                 sb.DrawUi(PixelGameGl.TexTarget, (Position + crossD).ToVector2(), Color.White);
+
+                BazookaTimer.DrawCircles(sb, (int) Center.X, (int) Center.Y);
+
             }
         }
     }
