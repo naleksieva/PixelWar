@@ -127,7 +127,7 @@ namespace PixelWarGL
                 for (int y = 0; y < Height; y++)
                 {
                     if (pos.X + x >= terrain.GetLength(0) || pos.Y + y >= terrain.GetLength(1) || pos.Y + y < 0 || pos.X + x < 0)
-                        return true;
+                        continue;
 
                     var ourColor = texColors.Get(Texture.Width, x, y);
                     var haveColor = (ourColor.A > 0);
