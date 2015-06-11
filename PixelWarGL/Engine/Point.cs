@@ -74,6 +74,16 @@ namespace PixelWarGL
             return Math.Sqrt(dx * dx + dy * dy);
         }
 
+        public Point Rotate (Point origin, double angle)
+        {
+            var cos = Math.Cos(angle);
+            var sin = Math.Sin(angle);
+            var a = this - origin;
+            var b = new Point((int)(cos * a.X - sin * a.Y), (int)(sin * a.X + cos * a.Y));
+            var c = b + origin;
+            return c;
+        }
+
         public override bool Equals(object obj)
         {
             if (!(obj is Point))
