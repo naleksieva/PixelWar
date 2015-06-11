@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="PixelWarGL.Animal">
-    <Position X="11" Y="8.75" Width="1.5" />
+  <Class Name="PixelWarGL.Animal" Collapsed="true">
+    <Position X="13" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ISQABAAABgFABghAESCAAAAIBgAAAAAAAAAAAJABIEA=</HashCode>
+      <HashCode>ISQABAQABgBQBghAESCAEIAIBgAAAAAAIAAEAJABBEA=</HashCode>
       <FileName>Engine\Animal.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="PixelWarGL.GameObject">
+  <Class Name="PixelWarGL.GameObject" Collapsed="true">
     <Position X="8.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgQAAAAEBAAAgwBgAEAAAEAAABgQAAUAIAIACAAMAAA=</HashCode>
@@ -17,10 +17,10 @@
       <Field Name="Position" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="PixelWarGL.PixelGame">
+  <Class Name="PixelWarGL.PixelGame" Collapsed="true">
     <Position X="10" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAIAAgAAAAAQCAEACAAhYEEAGGEBBIAEAAA=</HashCode>
+      <HashCode>IAQAAAEAIAIBAgAAAACQCAEBCAAhYEEAGGEBBIAUAAA=</HashCode>
       <FileName>Engine\PixelGame.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -29,18 +29,18 @@
       <Field Name="Projectiles" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="PixelWarGL.Player">
+  <Class Name="PixelWarGL.Player" Collapsed="true">
     <Position X="13" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAABAAgBAEEAAAAAAAAgAAAAAIAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAABABAAgBAEEAAEIAABAgAAAAAIAAAAAAAAEA=</HashCode>
       <FileName>Engine\Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="Animal" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="PixelWarGL.Projectile">
-    <Position X="6.5" Y="4.25" Width="1.5" />
+  <Class Name="PixelWarGL.Projectile" Collapsed="true">
+    <Position X="6.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAAAAAAAAgAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Engine\Projectile.cs</FileName>
@@ -56,22 +56,22 @@
   <Class Name="PixelWarGL.PixelGameGl" Collapsed="true">
     <Position X="10" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAkECAQAAAAxAAAAAAAAAAgAAAAAgAAAAAAAggABQ=</HashCode>
+      <HashCode>AAQAkECAQAAAAxAAAgBAAAAAAAAAAAgAAAAAAAggQBQ=</HashCode>
       <FileName>PixelGameGl.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="TheGame" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="PixelWarGL.GameMap" Collapsed="true">
-    <Position X="2" Y="0.75" Width="1.5" />
+  <Class Name="PixelWarGL.GameMap">
+    <Position X="1.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
       <FileName>GameMap.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PixelWarGL.Program">
-    <Position X="7.5" Y="0.75" Width="1.5" />
+    <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
@@ -83,7 +83,7 @@
   <Struct Name="PixelWarGL.Point" Collapsed="true">
     <Position X="2.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAAACE4AcBAAAAAAAAAIAAAAAAAAAAYiA=</HashCode>
+      <HashCode>AAAAEAAAAAAAAACE4AcBAAAAEAAAAIAAAAAAAAAAYiA=</HashCode>
       <FileName>Engine\Point.cs</FileName>
     </TypeIdentifier>
   </Struct>
