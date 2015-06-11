@@ -265,12 +265,14 @@ namespace PixelWarGL
 
             if (IsActive)
             {
+                const int crosshairSize = 16;
                 var crossD = Vector.Zero.PolarProjection(Aim, CrosshairLength);
                 crossD.X *= Direction;
+                var center = Center + crossD;
+                var crossRect = new Rectangle((int)(center.X - crosshairSize / 2), (int)(center.Y - crosshairSize / 2), crosshairSize, crosshairSize);
+                sb.DrawUi(PixelGameGl.TexTarget, crossRect, Color.White);
 
-                sb.DrawUi(PixelGameGl.TexTarget, (Position + crossD).ToVector2(), Color.White);
-
-                BazookaTimer.DrawCircles(sb, (int) Center.X, (int) Center.Y);
+                BazookaTimer.DrawCircles(sb, (int) Center.X, (int) Center.Y, Aim);
 
             }
         }
