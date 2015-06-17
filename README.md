@@ -4,13 +4,10 @@ PixelWar
 PixelWar is a 2D tank-shooting game inspired by Worms, written in C# using the [MonoGame](http://www.monogame.net/) framework. 
 It was developed in Visual Studio under Windows.  
 
-The game features:
+In the beginning of the game, the tanks are placed on a pre-determined map (random map generator may be included at later stage). The tanks can move left and right, 
+jump and shoot bazookas. The game allows control over the shooting power (visualised with concentric circles). PixelWar works in multiplayer mode.
 
-  - Left/ right movement and jump.
-  - Control over shooting power.
-  - Bazooka shooting.
-  - Multiplayer mode.
- 
+   
 Build
 ================
 
