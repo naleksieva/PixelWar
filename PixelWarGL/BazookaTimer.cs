@@ -19,28 +19,25 @@ namespace PixelWarGL
         const int sq_incr_size = 2;
         const int circle_offset = 6;
 
-        static int n_circles = 0;
+        
+
+        //public static void CircleCount(int totalMsElapsed)
+        //{
+        //    totalMsElapsed %= (t_period * 2);
+        //    var t_actual = Math.Abs(totalMsElapsed - t_period);
+
+        //    n_circles = (int)Math.Round((double)(max_circles - min_circles) * t_actual / t_period + min_circles);
+
+        //}
 
 
 
-
-        public static void CircleCount(int totalMsElapsed)
+        public static void DrawCircles(SpriteBatch sb, int x, int y, double angle, double ratio)
         {
-            totalMsElapsed %= (t_period * 2);
-            var t_actual = Math.Abs(totalMsElapsed - t_period);
-
-            n_circles = (int)Math.Round((double)(max_circles - min_circles) * t_actual / t_period + min_circles);
-
-        }
-
-
-
-        public static void DrawCircles(SpriteBatch sb, int x, int y, double angle)
-        {
-
+            int n_circles = (int)(ratio * (max_circles - min_circles) + min_circles);
             var pts = new Point[n_circles];
 
-
+            
             pts[0] = new Point(x, y);
             for (int i = 1; i < n_circles; i++)
             {

@@ -120,9 +120,7 @@ namespace PixelWarGL
         {
             var msElapsed = (int)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            BazookaTimer.CircleCount((int)gameTime.TotalGameTime.TotalMilliseconds);
-
-           
+                       
             
             var kbd = Keyboard.GetState();
 

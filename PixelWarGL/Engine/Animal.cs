@@ -30,7 +30,7 @@ namespace PixelWarGL
         KeyboardState keyInfo;
 
         private int Direction = 1;
-        private int fireTimer;
+        private int fireTimer = 0;
 
         bool wasFireKeyDown = false;
         private bool lastFireKey;
@@ -44,16 +44,34 @@ namespace PixelWarGL
 
         public double Life { get; private set; }
         public bool IsDead { get; private set; }
-        public double Aim { get; private set; }
+        public double RawAim { get; private set; }
         public bool IsActive { get; private set; }
 
         /// <summary>
         /// Gets whether the animal is yet to fire this round.
         /// </summary>
         public bool CanShoot { get; private set; }
+        public double Aim
+        {
+            get
+            {
+                if (Direction == 1)
+                    return RawAim;
 
+                else
+                    return Math.PI - RawAim;
 
+            }
+        }
 
+        public double CurrentBazookaPower
+        {
+            get
+            {
+               return (double)fireTimer / MaxFireTime;
+            }
+        }
+        
         public Animal(PixelGame g)
             : base(g)
         {
@@ -101,12 +119,12 @@ namespace PixelWarGL
             if (keyInfo.IsKeyDown(Keys.Down))
             {
                 var dAngle = AimDelta * msElapsed / 1000;
-                Aim = Math.Min(Math.PI / 2, Aim + dAngle);
+                RawAim = Math.Min(Math.PI / 2, RawAim + dAngle);
             }
             if (keyInfo.IsKeyDown(Keys.Up))
             {
                 var dAngle = AimDelta * msElapsed / 1000;
-                Aim = Math.Max(-Math.PI / 2, Aim - dAngle);
+                RawAim = Math.Max(-Math.PI / 2, RawAim - dAngle);
             }
         }
 
@@ -121,7 +139,7 @@ namespace PixelWarGL
 
             //update the fire timer
             if (wasFireKeyDown && isFireKeyDown)
-                fireTimer += msElapsed;
+                fireTimer = Math.Min(fireTimer + msElapsed, MaxFireTime);
 
 
             //check if its state changed since the last Update call
@@ -138,14 +156,11 @@ namespace PixelWarGL
                 {
                     // just released
                    
-                    var angle = (this.Direction == 1) ? (this.Aim) : (Math.PI  - this.Aim);
-                    //fireTimer = 1000;
+                    var angle = (this.Direction == 1) ? (this.RawAim) : (Math.PI  - this.RawAim);
 
-                    fireTimer = Math.Min(fireTimer, MaxFireTime);
-                    var powerCoefficient = (double)fireTimer / MaxFireTime;
-                    var actualPower = powerCoefficient * (MaxPower - MinPower) + MinPower;
+                    var actualPower = CurrentBazookaPower * (MaxPower - MinPower) + MinPower;
 
-                    Console.WriteLine("Timer: {0},  Power Ratio {1}, Actual Power {2}", fireTimer, powerCoefficient, actualPower);
+                    Console.WriteLine("Timer: {0},  Power Ratio {1}, Actual Power {2}", fireTimer, CurrentBazookaPower, actualPower);
                     var p = new Projectile(this, angle, actualPower);
                     this.Game.Projectiles.Add(p);
 
@@ -155,6 +170,8 @@ namespace PixelWarGL
 
                     // prevent shooting again
                     this.CanShoot = false;
+                    fireTimer = 0;
+                    
                 }
 
             }
@@ -267,13 +284,20 @@ namespace PixelWarGL
             {
                 const int crosshairSize = 16;
                 var crossD = Vector.Zero.PolarProjection(Aim, CrosshairLength);
-                crossD.X *= Direction;
+
+                //
+                //crossD.X *= Direction;
+                //
+
                 var center = Center + crossD;
                 var crossRect = new Rectangle((int)(center.X - crosshairSize / 2), (int)(center.Y - crosshairSize / 2), crosshairSize, crosshairSize);
+                
                 sb.DrawUi(PixelGameGl.TexTarget, crossRect, Color.White);
 
-                BazookaTimer.DrawCircles(sb, (int) Center.X, (int) Center.Y, Aim);
+                if (CurrentBazookaPower > 0)
+                    BazookaTimer.DrawCircles(sb, (int)Center.X, (int)Center.Y, Aim, CurrentBazookaPower);
 
+                
             }
         }
     }
