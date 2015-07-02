@@ -62,15 +62,22 @@ namespace PixelWarGL
             sb.Draw(tex, newCoords, c);
         }
 
-        public static void DrawUi(this SpriteBatch sb, Texture2D tex, Vector2 pos, Color c)
+        public static void DrawUi(this SpriteBatch sb, Texture2D tex, Vector2 pos, Color c, float rotation = 0, bool flipHorizontal = false, bool flipVertical = false)
         {
-            var newCoords = new Rectangle(
-                (int)(pos.X * ScalingX),
-                (int)(pos.Y * ScalingY),
-                (int)(tex.Width * ScalingX),
-                (int)(tex.Height * ScalingY));
+            var w = (int)(tex.Width * ScalingX);
+            var h = (int)(tex.Height * ScalingY);
+            
+            var effects = SpriteEffects.None;
 
-            sb.Draw(tex, newCoords, c);
+            if (flipHorizontal)
+                effects = effects | SpriteEffects.FlipHorizontally;
+
+            if (flipVertical)
+                effects = effects | SpriteEffects.FlipVertically;
+
+            var newCoords = new Rectangle((int)(pos.X * ScalingX), (int)(pos.Y * ScalingY), w, h);
+
+            sb.Draw(tex, newCoords, null, c, rotation, Vector2.Zero, effects, 0);
         }
     }
 }

@@ -121,7 +121,6 @@ namespace PixelWarGL
             var msElapsed = (int)gameTime.ElapsedGameTime.TotalMilliseconds;
 
                        
-            
             var kbd = Keyboard.GetState();
 
             if (kbd.IsKeyDown(Keys.RightAlt) && kbd.IsKeyDown(Keys.Enter))

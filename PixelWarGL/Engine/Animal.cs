@@ -29,7 +29,10 @@ namespace PixelWarGL
 
         KeyboardState keyInfo;
 
-        private int Direction = 1;
+        // if 1 means we are facing right
+        // if -1, means we are facing left
+        int Direction = 1;
+
         private int fireTimer = 0;
 
         bool wasFireKeyDown = false;
@@ -276,8 +279,9 @@ namespace PixelWarGL
                 sb.DrawUi(PixelGameGl.TexOne, new Rectangle((int)barPos.X, (int)barPos.Y, (int)filledWidth, (int)barHeight), Color.DarkRed);
             }
 
+            var lookingLeft = (Direction == -1);
             //draw the tank
-            sb.DrawUi(Texture, Position.ToVector2(), Color.White);
+            sb.DrawUi(Texture, Position.ToVector2(), Color.White, flipHorizontal: lookingLeft);
 
 
             if (IsActive)
