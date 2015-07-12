@@ -26,6 +26,14 @@ namespace PixelWarGL
         public event Action OnCollision;
         public bool ShouldDestroy { get; protected set; }
 
+        public bool IsBellowMap
+        {
+            get
+            {
+                return this.Position.Y >= this.Game.TerrainHeight;
+            }
+        }
+
         public Vector Size 
         { 
             get { return new Vector(Width, Height); } 

@@ -125,13 +125,18 @@ namespace PixelWarGL
 
             // update players 
             foreach (Player pl in Players)
+            {
                 pl.Update(msElapsed);
-
+            }
             // update other objects
             foreach (var pr in Projectiles)
+            {
                 pr.Update(msElapsed);
+            }
 
+            Projectiles.RemoveAll(p => p.IsBellowMap);
             //cleanup stale objects
+           
             Projectiles.RemoveAll(p => p.ShouldDestroy);
         }
 
