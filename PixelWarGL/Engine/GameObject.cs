@@ -233,9 +233,9 @@ namespace PixelWarGL
             return newPos;
         }
 
-        internal Vector seekCollision(Vector newPos, Vector backtrack)
+        internal Vector seekCollision(Vector newPos, Vector backtrack, int nTries = 50)
         {
-            while (!isColliding(newPos))
+            while (!isColliding(newPos) && (nTries-- > 0))
                 newPos = newPos + backtrack;
 
             newPos -= backtrack;

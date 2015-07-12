@@ -10,7 +10,6 @@ namespace PixelWarGL
 {
     public static class BazookaTimer
     {
-        const int t_period = 2000;
 
         const int min_circles = 1;
         const int max_circles = 10;
@@ -18,19 +17,7 @@ namespace PixelWarGL
         const int sq_start_size = 10;
         const int sq_incr_size = 2;
         const int circle_offset = 6;
-
-        
-
-        //public static void CircleCount(int totalMsElapsed)
-        //{
-        //    totalMsElapsed %= (t_period * 2);
-        //    var t_actual = Math.Abs(totalMsElapsed - t_period);
-
-        //    n_circles = (int)Math.Round((double)(max_circles - min_circles) * t_actual / t_period + min_circles);
-
-        //}
-
-
+       
 
         public static void DrawCircles(SpriteBatch sb, int x, int y, double angle, double ratio)
         {
